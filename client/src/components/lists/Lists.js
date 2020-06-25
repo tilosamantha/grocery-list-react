@@ -6,7 +6,7 @@ const Lists = ({ lists, remove }) => (
   <Table celled padded>
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell>Bought</Table.HeaderCell>
+        <Table.HeaderCell>Checklist</Table.HeaderCell>
         <Table.HeaderCell>Name</Table.HeaderCell>
         <Table.HeaderCell>Price</Table.HeaderCell>
       </Table.Row>

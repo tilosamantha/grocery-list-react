@@ -6,7 +6,7 @@ import { Button, Table, Checkbox } from "semantic-ui-react";
 
 const List = ({ id, checkbox, name, price, remove, edit }) => (
   <Table.Row className='body'>
-    <Table.Cell>{checkbox}
+    <Table.Cell>Done:    {checkbox} 
       <Checkbox/>
     </Table.Cell>
     <Table.Cell>{name}</Table.Cell>

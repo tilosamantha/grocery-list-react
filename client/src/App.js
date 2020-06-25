@@ -3,8 +3,10 @@ import './App.css';
 import { Container, Header} from "semantic-ui-react";
 import Lists from './components/lists/Lists';
 import GroceryForm from "./GroceryForm";
+import axios from "axios";
 
-
+// class App extends Component {
+//   state = { todos: [], }
 class App extends Component {
   state = {
     lists: [
@@ -20,7 +22,6 @@ class App extends Component {
       .toString(16)
       .substring(1);
   };
-
   addList = (listData) => {
     let list = { id: this.getId(), ...listData, };
     this.setState({ lists: [list, ...this.state.lists], });
@@ -34,18 +35,31 @@ class App extends Component {
     this.setState({ lists: [...lists], });
   };
 
-  handleChange = (event) => {
-    const list = this.state.list;
-    list.name = event.target.value;
-    this.setState({ list: list });
-  };
+  // updateList = (id) => {
+  //   axios.put(`/api/lists/${id}`)
+  //   .then( res => {
+  //     const lists = this.state.lists.map( t => {
+  //     if (t.id === id)
+  //       return res.data;
+  //     return t;
+  //   });
+  //   this.setState({ lists,});
+  // };
+  
+
+  // handleChange = (event) => {
+  //   const list = this.state.list;
+  //   list.name = event.target.value;
+  //   this.setState({ list: list });
+  // };
+  
   
   render() {  
     return (
       <Container className='background'>
-        <Header as="h1">Grocery List </Header>
+        <Header as="h1">Grocery List</Header>
         <GroceryForm add={this.addList} />
-        <Lists lists={this.state.lists} remove={this.removeList} edit={this.editList}/>
+        <Lists lists={this.state.lists} remove={this.removeList} edit={this.updateList}/>
       </Container>
 
     );
